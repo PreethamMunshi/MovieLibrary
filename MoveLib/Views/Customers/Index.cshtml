@@ -1,0 +1,22 @@
+﻿@model MoveLib.ViewModels.CustomerVm
+    
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Name</h2>
+
+@if (Model.Name.Length == 0)
+{
+    <text>No one has borrowed this movie</text>
+}
+else
+{
+    <ul>
+        @foreach (var customer in Model.Customers)
+        {
+            <li>@customer.Name</li>
+        }
+    </ul>
+}
